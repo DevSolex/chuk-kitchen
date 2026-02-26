@@ -1,6 +1,6 @@
-# 🍽️ Chuks Kitchen Backend API
+# Chuks Kitchen Backend API
 
-## 📌 Project Overview
+## Project Overview
 
 This project is a backend implementation of a **Food Ordering & Customer Management System** for **Chuks Kitchen**.
 
@@ -24,7 +24,7 @@ This project focuses on backend system design, API structure, data modeling, and
 
 ---
 
-# 🏗️ System Architecture
+# System Architecture
 
 ### Architecture Type
 Monolithic RESTful API
@@ -37,7 +37,7 @@ Monolithic RESTful API
 
 ---
 
-# 🗂️ Project Structure
+# Project Structure
 
 chuks_kitchen/
 │
@@ -55,11 +55,11 @@ chuks_kitchen/
 
 ---
 
-# 🗄️ Data Modeling
+# Data Modeling
 
 ## Entities
 
-### 1️⃣ User
+### 1 User
 - id
 - email
 - phone
@@ -67,31 +67,31 @@ chuks_kitchen/
 - status (unverified / verified)
 - otp
 
-### 2️⃣ Food
+### 2 Food
 - id
 - name
 - description
 - price
 - is_available
 
-### 3️⃣ Cart
+### 3 Cart
 - id
 - user_id
 
-### 4️⃣ CartItem
+### 4 CartItem
 - id
 - cart_id
 - food_id
 - quantity
 
-### 5️⃣ Order
+### 5 Order
 - id
 - user_id
 - total_price
 - status
 - created_at
 
-### 6️⃣ OrderItem
+### 6 OrderItem
 - id
 - order_id
 - food_id
@@ -100,7 +100,7 @@ chuks_kitchen/
 
 ---
 
-## 🧠 Key Design Decision
+## Key Design Decision
 
 `OrderItem` stores `price_at_order`.
 
@@ -108,9 +108,9 @@ This ensures that if food prices change later, previous orders maintain their or
 
 ---
 
-# 🔄 System Flow Explanation
+# System Flow Explanation
 
-## 1️⃣ User Registration Flow
+## 1 User Registration Flow
 
 ### POST `/signup`
 
@@ -128,7 +128,7 @@ This ensures that if food prices change later, previous orders maintain their or
 
 ---
 
-## 2️⃣ Food Flow
+## 2 Food Flow
 
 ### POST `/foods`
 - Adds a new food item.
@@ -138,7 +138,7 @@ This ensures that if food prices change later, previous orders maintain their or
 
 ---
 
-## 3️⃣ Cart Flow
+## 3 Cart Flow
 
 ### POST `/cart/add`
 
@@ -150,7 +150,7 @@ Cart and CartItem are separated for proper database normalization and scalabilit
 
 ---
 
-## 4️⃣ Order Flow
+## 4 Order Flow
 
 ### POST `/orders`
 
@@ -172,7 +172,7 @@ Cart and CartItem are separated for proper database normalization and scalabilit
 
 ---
 
-# 📦 API Endpoints Summary
+# API Endpoints Summary
 
 | Method | Endpoint | Description |
 |--------|----------|------------|
@@ -186,7 +186,7 @@ Cart and CartItem are separated for proper database normalization and scalabilit
 
 ---
 
-# ⚠️ Edge Case Handling
+# Edge Case Handling
 
 ### User
 - Duplicate email/phone prevented
@@ -208,7 +208,7 @@ HTTP Status Codes Used:
 
 ---
 
-# 📈 Scalability Considerations
+# Scalability Considerations
 
 If the system scales from 100 to 10,000+ users:
 
@@ -233,25 +233,25 @@ If the system scales from 100 to 10,000+ users:
 
 ---
 
-# 🚀 How To Run
+# How To Run
 
-## 1️⃣ Install Dependencies
+## 1 Install Dependencies
 pip install -r requirements.txt
 
 
-## 2️⃣ Run Server
+## 2 Run Server
 
 
 uvicorn app.main:app --reload
 
 
-## 3️⃣ Open API Documentation
+## 3 Open API Documentation
 http://127.0.0.1:8000/docs
 
 
 ---
 
-# 🎯 Assignment Goals Covered
+# Assignment Goals Covered
 
 This implementation demonstrates:
 
@@ -264,7 +264,7 @@ This implementation demonstrates:
 
 ---
 
-# ✅ Final Notes
+# Final Notes
 
 - Authentication system not implemented (as per assignment scope).
 - Payment gateway integration not implemented (logic-only assumption).
